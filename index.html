@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanmay's Portfolio Website</title>
+    <style>
+        /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #fff;
+}
+
+/* Container */
+.container {
+    padding: 10px 10%;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 140px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: medium;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Header Section */
+.header-text {
+    margin-top: 10%;
+    font-size: 30px;
+    text-align: left;
+}
+
+.header-text h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-text h1 span {
+    color: #ff004f;
+}
+
+/* About Section */
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 80%;
+    text-align: justify;
+}
+
+.about-col-1 h3{
+    font-size: px;
+    align-content: left;
+}
+
+.about-col-1 img {
+    max-width: fit-content;
+    max-height: fit-content;
+    border-radius: 20px;
+    background-color: #070606;
+    padding: 10px;
+    border-color: #efe9eb;
+    border-width: 10px;
+    border-style: solid;
+    justify-content: left;
+}
+
+.about-col-2 {
+    flex: 1;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s ease-in-out;
+    max-width: fit-content;
+}
+
+.tab-link.active {
+    color: #ff0050;
+    border-bottom: 2px solid #ff0050;
+}
+
+.tab-content {
+    display: none;
+    width: 80%;
+    margin: 30px auto;
+    font-size: large;
+    text-align: left;
+}
+
+.tab-content p{
+    text-align: center;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Projects Section */
+#projects {
+    margin-top: 8%;
+    text-align: center;
+}
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.project {
+    background: #363535;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.project:hover{
+    background: #ba5275;
+    transform: translateY(-30px);
+}
+
+.project h2 {
+    color: #ff004f;
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+
+.project .button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: white;
+    background: #ff004f;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+
+.project-list .project i{
+    font-size: 100px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background: #ff004f;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 15px rgba(255, 0, 79, 0.8);
+}
+
+/* Download Resume Section */
+#download-resume {
+    text-align: center;
+    padding: 50px 0;
+    background: #1a1a1a; /
+}
+
+#download-resume .sub-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+#download-resume p {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Resume Download Button */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+    color: white;
+    background: #ff004f;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    background: #e60045;
+    box-shadow: 0px 0px 15px rgba(255, 0, 79, 0.8);
+    transform: scale(1.05);
+}
+
+
+    </style>
+    <script src="https://kit.fontawesome.com/5ed68d2014.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- HEADER SECTION -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <img src="Photos/image.png" class="logo" alt="Logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Software Engineering Student</p>
+                <h1>Hi! I am <span>Tanmay</span><br>From KIIT.</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Photos/mn.png" alt="Profile Image">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me </h1>
+                    <br>
+                    <p>Here is a section about me where text needs to be added.</p>
+
+                    <!-- TABS -->
+                    <div class="tabs">
+                        <button class="tab-link active" onclick="openTab(event, 'skills')">Skills</button>
+                        <button class="tab-link" onclick="openTab(event, 'experience')">Internship</button>
+                        <button class="tab-link" onclick="openTab(event, 'education')">Education</button>
+                    </div>
+
+                    <!-- TAB CONTENT -->
+                    <div id="skills" class="tab-content active">
+                        <h3>1. UI/UX</h3>
+                        <br>
+                        <p>Designing Web/App interfaces</p>
+                        <br>
+                        <h3>2. Web Development</h3>
+                        <br>
+                        <p>Web App Development</p>
+                        <br>
+                        <h3>3. App Development</h3>
+                        <br>
+                        <p>Building Android/iOS apps</p>
+                        <br>
+                    </div>
+
+                    <div id="experience" class="tab-content">
+                        <h3>Software Engineer</h3>
+                        <br>
+                        <p>Worked on full-stack development</p>
+                        <br>
+                        <h3>Freelancer</h3>
+                        <br>
+                        <p>Designed multiple web projects</p>
+                        <br>
+                    </div>
+
+                    <div id="education" class="tab-content">
+                        <h3>Bachelor's in Computer Science</h3>
+                        <br>
+                        <p>XYZ University, 2019 - 2023</p>
+                        <br>
+                        <h3>High School</h3>
+                        <br>
+                        <p>ABC School, 2017 - 2019</p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <div class="container">
+            <h1 class="sub-title">My Projects <br><br></h1>
+            <div class="project-list">
+                <div class="project">
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Project 1</h2>
+                    <p>Project 1 description</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
+                <div class="project">
+                    <i class="fa-solid fa-desktop"></i>
+                    <h2>Project 2</h2>
+                    <p>Project 2 description</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
+                <div class="project">
+                    <i class="fa-brands fa-aws"></i>
+                    <h2>Project 3</h2>
+                    <p>Project 3 description</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD RESUME SECTION -->
+    <section id="download-resume">
+        <div class="container">
+            <h1 class="sub-title">Download My Resume</h1>
+            <p>Get a detailed overview of my skills, experience, and education in my resume. Click the button below to download it.</p>
+            <a href="resume.pdf" class="button" download>Download Resume</a>
+        </div>
+    </section>
+
+    <script>
+        function openTab(event, tabName) {
+            var i, tabContent, tabLinks;
+        
+            // Hide all content
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+        
+            // Remove active class from all tabs
+            tabLinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
+            }
+        
+            // Show the clicked tab
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.classList.add("active");
+        }
+        
+        // Show default tab
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("skills").style.display = "block";
+        });
+        
+    </script>
+</body>
+</html>
