@@ -66,7 +66,7 @@ document
   });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const words = ["Developer", "Enggineer", "Web Devloper ", "Learner"];
+  const words = ["Developer", "Engineer", "Web Developer ", "Student"];
   let index = 0;
   let letterIndex = 0;
   let isDeleting = false;
